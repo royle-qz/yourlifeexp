@@ -5,42 +5,45 @@
   <title>Redirecting...</title>
   <meta http-equiv="refresh" content="2; url=https://sites.google.com/view/yourlifeexp/your-life-exp" />
 
-  <!-- IMPORT SPECIAL ELITE FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <!-- IMPORT FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet">
 
   <style>
     body {
       background-color: #000;
-      color: #ff3c00;
-      font-family: 'Special Elite', monospace;
+      color: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       flex-direction: column;
       margin: 0;
+      padding: 0 20px;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2rem;
-      animation: glitch 1s infinite;
-      text-align: center;
-      letter-spacing: 1px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 14px;
+      animation: highlighter-glitch 1s infinite;
+      line-height: 1.6;
     }
 
     a {
+      font-family: 'Special Elite', monospace;
       color: #FFD700;
       text-decoration: none;
-      margin-top: 10px;
-      font-size: 0.9rem;
+      margin-top: 20px;
+      font-size: 12px;
     }
 
-    @keyframes glitch {
-      0% { text-shadow: 2px 0 red; }
-      25% { text-shadow: -2px 0 #00f; }
-      50% { text-shadow: 2px 2px #0ff; }
-      75% { text-shadow: -1px -1px #f0f; }
-      100% { text-shadow: 0 0 #fff; }
+    @keyframes highlighter-glitch {
+      0%   { color: #ffff00; text-shadow: 0 0 5px #ffff00; } /* yellow */
+      20%  { color: #00ffff; text-shadow: 0 0 5px #00ffff; } /* cyan */
+      40%  { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; } /* magenta */
+      60%  { color: #00ff00; text-shadow: 0 0 5px #00ff00; } /* neon green */
+      80%  { color: #ff3300; text-shadow: 0 0 5px #ff3300; } /* red-orange */
+      100% { color: #ffff00; text-shadow: 0 0 5px #ffff00; } /* yellow again */
     }
   </style>
 
@@ -52,7 +55,8 @@
 </head>
 
 <body>
-  <h1>YOUR LIFE EXP</h1>
-  <a href="https://sites.google.com/view/yourlifeexp/your-life-exp">click if you're not redirected</a>
+  <h1>YOUR<br>LIFE EXP...</h1>
+  <a href="https://sites.google.com/view/yourlifeexp/your-life-exp">click here if you’re not redirected</a>
 </body>
 </html>
+
