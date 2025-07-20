@@ -2,71 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Redirecting...</title>
-  <meta http-equiv="refresh" content="2; url=https://sites.google.com/view/yourlifeexp/your-life-exp" />
+  <title>Enter YLE</title>
 
   <!-- IMPORT FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
       background-color: #000;
-      color: #ffffff;
+      overflow: hidden;
+      font-smooth: never;
+      -webkit-font-smoothing: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    #fire-bg {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scale(1);
+      transform-origin: bottom center;
+      width: auto;
+      height: 100%;
+      transition: transform 0.3s ease;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      margin: 0;
-      padding: 0 20px;
       text-align: center;
+      pointer-events: none;
     }
 
     h1 {
       font-family: 'Press Start 2P', monospace;
-      font-size: 32px;
-      animation: laggy-color 5s infinite;
-      line-height: 1.4;
-    }
-
-    a {
-      font-family: 'Special Elite', monospace;
-      color: #FFD700;
-      text-decoration: none;
-      margin-top: 40px;
-      font-size: 14px;
+      font-size: 48px;
+      animation: laggy-color 6s steps(6, end) infinite;
+      margin: 0;
+      line-height: 1.2;
+      z-index: 2;
     }
 
     @keyframes laggy-color {
-      0%   { color: #ffff00; } /* Yellow */
-      20%  { color: #00ffff; } /* Cyan */
-      40%  { color: #ff00ff; } /* Magenta */
-      60%  { color: #00ff00; } /* Green */
-      80%  { color: #ff3300; } /* Red-Orange */
-      100% { color: #ffff00; } /* Back to Yellow */
+      0%   { color: #ffff00; }
+      20%  { color: #00ffff; }
+      40%  { color: #ff00ff; }
+      60%  { color: #00ff00; }
+      80%  { color: #ff3300; }
+      100% { color: #ffff00; }
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 18px;
-      }
-
-      a {
-        font-size: 12px;
+        font-size: 24px;
       }
     }
   </style>
-
-  <script>
-    setTimeout(function() {
-      window.location.href = "https://sites.google.com/view/yourlifeexp/your-life-exp";
-    }, 2000);
-  </script>
 </head>
 
-<body>
-  <h1>YOUR<br>LIFE EXP...</h1>
-  <a href="https://sites.google.com/view/yourlifeexp/your-life-exp">click here if you’re not redirected</a>
+<body onclick="ignite()">
+  <div class="container">
+    <img id="fire-bg" src="fire.png" alt="Fire Background">
+    <div class="overlay">
+      <h1>YOUR<br>LIFE EXP...</h1>
+    </div>
+  </div>
+
+  <script>
+    let taps = 0;
+    const fire = document.getElementById("fire-bg");
+
+    function ignite() {
+      taps++;
+      if (taps === 1) {
+        fire.style.transform = "translateX(-50%) scale(1.2)";
+      } else if (taps === 2) {
+        fire.style.transform = "translateX(-50%) scale(1.5)";
+      } else if (taps === 3) {
+        fire.style.transform = "translateX(-50%) scale(2)";
+        setTimeout(() => {
+          window.location.href = "https://sites.google.com/view/yourlifeexp/your-life-exp";
+        }, 800);
+      }
+    }
+  </script>
 </body>
 </html>
+
 
