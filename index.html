@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Enter YLE</title>
+  <title>YLE</title>
 
   <!-- IMPORT FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
       position: absolute;
       bottom: 0;
       left: 50%;
-      transform: translateX(-50%) scale(1);
+      transform: translateX(-50%) scale(1.2);
       transform-origin: bottom center;
       width: auto;
       height: 100%;
@@ -44,7 +44,7 @@
 
     .overlay {
       position: absolute;
-      top: 0;
+      top: 52;
       left: 0;
       width: 100%;
       height: 100%;
@@ -98,11 +98,11 @@
     function ignite() {
       taps++;
       if (taps === 1) {
-        fire.style.transform = "translateX(-50%) scale(1.2)";
-      } else if (taps === 2) {
         fire.style.transform = "translateX(-50%) scale(1.5)";
-      } else if (taps === 3) {
+      } else if (taps === 2) {
         fire.style.transform = "translateX(-50%) scale(2)";
+      } else if (taps === 3) {
+        fire.style.transform = "translateX(-50%) scale(2.3)";
         setTimeout(() => {
           window.location.href = "https://sites.google.com/view/yourlifeexp/your-life-exp";
         }, 800);
