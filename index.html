@@ -24,26 +24,36 @@
 
     h1 {
       font-family: 'Press Start 2P', monospace;
-      font-size: 14px;
-      animation: highlighter-glitch 1s infinite;
-      line-height: 1.6;
+      font-size: 32px;
+      animation: laggy-color 5s infinite;
+      line-height: 1.4;
     }
 
     a {
       font-family: 'Special Elite', monospace;
       color: #FFD700;
       text-decoration: none;
-      margin-top: 20px;
-      font-size: 12px;
+      margin-top: 40px;
+      font-size: 14px;
     }
 
-    @keyframes highlighter-glitch {
-      0%   { color: #ffff00; text-shadow: 0 0 5px #ffff00; } /* yellow */
-      20%  { color: #00ffff; text-shadow: 0 0 5px #00ffff; } /* cyan */
-      40%  { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; } /* magenta */
-      60%  { color: #00ff00; text-shadow: 0 0 5px #00ff00; } /* neon green */
-      80%  { color: #ff3300; text-shadow: 0 0 5px #ff3300; } /* red-orange */
-      100% { color: #ffff00; text-shadow: 0 0 5px #ffff00; } /* yellow again */
+    @keyframes laggy-color {
+      0%   { color: #ffff00; } /* Yellow */
+      20%  { color: #00ffff; } /* Cyan */
+      40%  { color: #ff00ff; } /* Magenta */
+      60%  { color: #00ff00; } /* Green */
+      80%  { color: #ff3300; } /* Red-Orange */
+      100% { color: #ffff00; } /* Back to Yellow */
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 18px;
+      }
+
+      a {
+        font-size: 12px;
+      }
     }
   </style>
 
