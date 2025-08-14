@@ -52,12 +52,15 @@
       transform: translateY(-10%);    }
 
     /* Dragon image above text */
-    .dragon {
+ .dragon {
   max-width: 500px;
   max-height: 500px;
   margin-bottom: 20px;
   animation: float 3s ease-in-out infinite;
   transition: filter 0.1s, transform 0.1s;
+  background: rgba(0, 0, 0, 0.6); /* dark highlight */
+  padding: 10px; /* space around image inside background */
+  border-radius: 8px; /* optional rounded corners */
 }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
