@@ -24,16 +24,16 @@
       user-select: none;
     }
 
-    /* Darkened TV Static Background */
+    /* TV Static Background */
     .static {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/7/7d/TV_static.gif') center/cover no-repeat;
-      filter: brightness(0.35);
+      background: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif') center/cover no-repeat;
       z-index: 0;
+      filter: brightness(0.5);
     }
 
     .overlay {
@@ -51,15 +51,14 @@
       pointer-events: none;
     }
 
-    /* Bigger Dragon Image Above Text */
+    /* Dragon image above text */
     .dragon {
-      max-width: 450px;
-      max-height: 450px;
-      margin-bottom: 20px;
-      animation: float 3s ease-in-out infinite;
-      transition: filter 0.1s, transform 0.1s;
-    }
-
+  max-width: 500px;
+  max-height: 500px;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+  transition: filter 0.1s, transform 0.1s;
+}
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
@@ -67,7 +66,7 @@
 
     h1 {
       font-family: 'Press Start 2P', monospace;
-      font-size: 36px;
+      font-size: 32px;
       color: white;
       animation: blink 1s steps(2, start) infinite;
       background: rgba(0, 0, 0, 0.6);
@@ -81,11 +80,11 @@
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 20px;
+        font-size: 18px;
       }
       .dragon {
-        max-width: 250px;
-        max-height: 250px;
+        max-width: 180px;
+        max-height: 180px;
       }
     }
   </style>
@@ -95,4 +94,36 @@
   <div class="static"></div>
 
   <div class="overlay">
-    <img src="dragon.png" al
+    <img src="Untitled860_20250814192548.png" alt="Dragon Drawing" class="dragon" id="dragon">
+    <h1>PRESS TO START</h1>
+  </div>
+
+  <script>
+    function startSite() {
+      window.location.href = "https://sites.google.com/view/yourlifeexp/your-life-exp";
+    }
+
+    // Random glitch effect
+    const dragon = document.getElementById("dragon");
+
+    function glitchEffect() {
+      dragon.style.filter = "hue-rotate(" + (Math.random() * 40 - 20) + "deg) contrast(120%)";
+      dragon.style.transform = `translateY(-5px) translateX(${Math.random() * 4 - 2}px) scale(${1 + Math.random() * 0.02})`;
+      
+      setTimeout(() => {
+        dragon.style.filter = "none";
+        dragon.style.transform = "";
+      }, 100);
+    }
+
+    function randomGlitchLoop() {
+      setTimeout(() => {
+        glitchEffect();
+        randomGlitchLoop();
+      }, Math.random() * 4000 + 1000); // Random between 1s–5s
+    }
+
+    randomGlitchLoop();
+  </script>
+</body>
+</html>
